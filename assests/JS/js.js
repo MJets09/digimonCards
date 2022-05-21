@@ -15,30 +15,30 @@ function removeElements(elements) {
 }
 
 
-function getMon() {
-    let userMon = document.querySelector('input').value
-    let userAttribute = document.querySelector('#dataType').value
-    let set = document.querySelector('#cardSet').value
-    let url = `https://digimoncard.io/api-public/search.php?n=${userMon}&color=${userAttribute}&set_name=${set}`
+// function getMon() {
+//     let userMon = document.querySelector('input').value
+//     let userAttribute = document.querySelector('#dataType').value
+//     let set = document.querySelector('#cardSet').value
+//     let url = `https://digimoncard.io/api-public/search.php?n=${userMon}&color=${userAttribute}&set_name=${set}`
 
-    fetch(url).then(res => res.json()).then(data => {
-            console.log(data)
+//     fetch(url).then(res => res.json()).then(data => {
+//             console.log(data)
 
-            removeElements(document.querySelectorAll('li'));
-            //This removes the created elements.FIGURE OUT HOW THIS WORKS.
-            console.log(set)
-            data.forEach(obj => {
-                let newLi = document.createElement('li');
-                let newImg = document.createElement('img');
-                newImg.src = obj.image_url;
-                newLi.appendChild(newImg)
-                document.querySelector('ul').appendChild(newLi)
-            })
-        })
-        .catch(err => {
-            console.log(`error ${err}`)
-        })
-}
+//             removeElements(document.querySelectorAll('li'));
+//             //This removes the created elements.FIGURE OUT HOW THIS WORKS.
+//             console.log(set)
+//             data.forEach(obj => {
+//                 let newLi = document.createElement('li');
+//                 let newImg = document.createElement('img');
+//                 newImg.src = obj.image_url;
+//                 newLi.appendChild(newImg)
+//                 document.querySelector('ul').appendChild(newLi)
+//             })
+//         })
+//         .catch(err => {
+//             console.log(`error ${err}`)
+//         })
+// }
 
 function getAllMon() {
     let userMon = document.querySelector('input').value
@@ -66,4 +66,31 @@ function getAllMon() {
             console.log(`error ${err}`)
         })
 
+}
+
+
+
+function getMon() {
+    let userMon = document.querySelector('input').value
+    let userAttribute = document.querySelector('#dataType').value
+    let set = document.querySelector('#cardSet').value
+    let url = `https://digimoncard.io/api-public/search.php?set_name=${set}`
+
+    fetch(url).then(res => res.json()).then(data => {
+            console.log(data)
+
+            removeElements(document.querySelectorAll('li'));
+            //This removes the created elements.FIGURE OUT HOW THIS WORKS.
+            console.log(set)
+            data.forEach(obj => {
+                let newLi = document.createElement('li');
+                let newImg = document.createElement('img');
+                newImg.src = obj.image_url;
+                newLi.appendChild(newImg)
+                document.querySelector('ul').appendChild(newLi)
+            })
+        })
+        .catch(err => {
+            console.log(`error ${err}`)
+        })
 }
