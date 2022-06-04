@@ -22,12 +22,19 @@ function getMon() {
             removeElements(document.querySelectorAll('li'));
             //This removes the created elements.FIGURE OUT HOW THIS WORKS.
             data.forEach(obj => {
+
+                removeElements(document.querySelectorAll('li'));
+
                 let newLi = document.createElement('li');
                 let newImg = document.createElement('img');
+
                 newImg.src = obj.image_url;
+
                 newLi.appendChild(newImg)
+
                 document.querySelector('ul').appendChild(newLi)
             })
+
         })
         .catch(err => {
             console.log(`error ${err}`)
