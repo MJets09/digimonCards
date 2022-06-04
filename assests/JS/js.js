@@ -23,8 +23,6 @@ function getMon() {
             //This removes the created elements.FIGURE OUT HOW THIS WORKS.
             data.forEach(obj => {
 
-                removeElements(document.querySelectorAll('li'));
-
                 let newLi = document.createElement('li');
                 let newImg = document.createElement('img');
 
