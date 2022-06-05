@@ -1,7 +1,14 @@
+@font-face {
+    font-family: yeezy;
+    src: url(../yeezy_tstar-bold-webfont.ttf);
+}
+
 * {
     box-sizing: border-box;
     text-align: center;
     margin: auto;
+    background-color: #eee9de;
+    font-family: yeezy;
 }
 
 
@@ -22,17 +29,26 @@ section {
 
 /* Styles */
 
-li {
-    text-decoration: none;
-}
-
 img {
     /* max-height: 300px; */
     max-width: 400px;
+    border-radius: 5%;
 }
 
 ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+}
+
+li {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none;
 }
